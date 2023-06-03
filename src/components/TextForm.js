@@ -43,14 +43,14 @@ export default function TextForm(props) {
                         id="exampleFormControlTextarea1" rows="8" ></textarea>
 
                 </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert To UpperCase </button>
-                <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert To LowerCase</button>
-                <button className="btn btn-primary mx-2" onClick={handleToClear}>Clear text</button>
+                <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert To UpperCase </button>
+                <button className="btn btn-primary mx-2 my-1 " onClick={handleLoClick}>Convert To LowerCase</button>
+                <button className="btn btn-primary mx-2 my-1" onClick={handleToClear}>Clear text</button>
 
 
                 <h2>Your Text Summery</h2>
-                <p>{text.split(" ").length} Words And {text.length} Characters</p>
-                <p>{0.008 * text.split(" ").length}Minutes To Read</p>
+                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words And {text.length} Characters</p>
+                <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length}Minutes To Read</p>
                 <h2>Preview</h2>
                 <p>{text}</p>
             </div>
